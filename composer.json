@@ -1,0 +1,43 @@
+{
+    "name": "marionnewlevant/exec-widget",
+    "description": "Widgets which run Tasks that call exec(...)",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "exec widget"
+    ],
+    "support": {
+        "docs": "https://github.com/craft-exec_widget/exec-widget/blob/master/README.md",
+        "issues": "https://github.com/craft-exec_widget/exec-widget/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marion Newlevant",
+            "homepage": "http://marion.newlevant.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "marionnewlevant\\execwidget\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Exec Widget",
+        "handle": "exec-widget",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/craft-exec-widget/exec-widget/master/CHANGELOG.md",
+        "components": {
+            "execWidgetService": "marionnewlevant\\execwidget\\services\\ExecWidgetService"
+        },
+        "class": "marionnewlevant\\execwidget\\ExecWidget"
+    }
+}

@@ -1,0 +1,24 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Exec Widget plugin for Craft CMS
+ *
+ * ExecWidget Widget Body
+ *
+ * @author    Marion Newlevant
+ * @copyright Copyright (c) 2018 Marion Newlevant
+ * @link      http://marion.newlevant.com
+ * @package   ExecWidget
+ * @since     1.0.0
+ */
+#}
+
+<p>{{ message }}</p>
+{% if command %}
+  <form method="post" accept-charset="UTF-8">
+    {{ csrfInput() }}
+    <input type="hidden" name="action" value="exec-widget/exec">
+    <input type="hidden" name="command" value="{{command}}">
+    <button class="btn submit" type="submit">{{'Do it'|t('exec-widget')}}</button>
+  </form>
+{% endif %}

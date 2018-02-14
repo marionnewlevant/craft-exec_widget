@@ -1,0 +1,37 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Exec Widget plugin for Craft CMS
+ *
+ * ExecWidget Widget Settings
+ *
+ * @author    Marion Newlevant
+ * @copyright Copyright (c) 2018 Marion Newlevant
+ * @link      http://marion.newlevant.com
+ * @package   ExecWidget
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as m_forms %}
+
+{{ m_forms.textarea({
+  label: 'Instructions',
+  placeholder: 'Enter instructions here.',
+  id: 'message',
+  name: 'message',
+  value: widget['message']
+}) }}
+<br>
+{% set formOptions = [{label: 'Select a command', value: ''}] %}
+{% for handle, command in craft.execWidget.commands() %}
+  {% set formOptions = formOptions | merge([{label: handle, value: handle}]) %}
+{% endfor %}
+{{ m_forms.select({
+  label: 'Message',
+  instructions: 'Select a command',
+  id: 'command',
+  name: 'command',
+  options: formOptions,
+  value: widget['command']
+}) }}
